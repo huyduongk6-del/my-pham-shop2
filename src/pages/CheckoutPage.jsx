@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-  CreditCard, Wallet, Smartphone, ShoppingBag, 
+import {
+  CreditCard, Wallet, Smartphone, ShoppingBag,
   Check, ArrowLeft, ChevronRight, MapPin, Sparkles, X, Lock,
   ShieldCheck, Truck, Calendar, User, Phone, Mail, Building
 } from 'lucide-react';
@@ -83,7 +83,7 @@ const CheckoutPage = () => {
       alert('필수 정보를 입력해 주세요.');
       return;
     }
-    
+
     const now = new Date();
     const yyyy = now.getFullYear();
     const mm = String(now.getMonth() + 1).padStart(2, '0');
@@ -139,7 +139,7 @@ const CheckoutPage = () => {
 
       <div className="max-w-6xl mx-auto text-center md:text-left mb-8">
         <h1 className="text-2xl md:text-[32px] font-black text-[#111111] tracking-tight mb-2 leading-tight">안전 결제</h1>
-        <p className="text-[12px] md:text-[13px] font-bold text-neutral-400 tracking-wide">프리미엄 뷰티 럭스와 cùng하는 안전한 쇼핑</p>
+        <p className="text-[12px] md:text-[13px] font-bold text-neutral-400 tracking-wide">프리미엄 뷰티 럭스와 함께하는 안전한 쇼핑</p>
       </div>
 
       {/* STEPPER UI */}
@@ -288,7 +288,7 @@ const CheckoutPage = () => {
               <Lock size={18} className="mb-0.5 opacity-80" />
               <span>{currentStep === 2 ? '안전하게 결제하기' : '배송 정보를 입력해주세요'}</span>
             </button>
-            
+
             {/* Trust Badges & Estimated Delivery */}
             <div className="mt-6 pt-5 border-t border-dashed border-neutral-200">
               <div className="bg-[#FAF7F2]/60 border border-[#FAF7F2] rounded-xl p-3 mb-5 flex items-center justify-center gap-3">

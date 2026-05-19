@@ -855,3 +855,26 @@ export const heroSlides = [
     image: "/images/hero/hero-5.png"
   }
 ];
+
+// Dynamic path rewriter for GitHub Pages
+const isGitHubPages = window.location.hostname.includes('github.io');
+if (isGitHubPages) {
+  const repoName = '/my-pham-shop2';
+  const fixPath = (path) => {
+    if (typeof path === 'string' && path.startsWith('/images/')) {
+      return repoName + path;
+    }
+    return path;
+  };
+  
+  const fixProduct = (p) => {
+    if (p.image) p.image = fixPath(p.image);
+    if (p.gallery) p.gallery = p.gallery.map(fixPath);
+  };
+
+  categories.forEach(c => { if (c.image) c.image = fixPath(c.image); });
+  allProducts.forEach(fixProduct);
+  promoBanners.forEach(b => { if (b.image) b.image = fixPath(b.image); });
+  heroSlides.forEach(s => { if (s.image) s.image = fixPath(s.image); });
+}
+

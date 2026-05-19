@@ -32,6 +32,7 @@ import { WishlistProvider } from './context/WishlistContext';
 import { RecentlyViewedProvider } from './context/RecentlyViewedContext';
 import { ToastProvider } from './context/ToastContext';
 import Toast from './components/common/Toast';
+import { Analytics } from '@vercel/analytics/react';
 
 // Auth Pages
 import LoginPage from './pages/LoginPage';
@@ -47,6 +48,7 @@ function App() {
             <WishlistProvider>
               <RecentlyViewedProvider>
                 <ScrollToTop />
+                <Analytics />
             <div className="min-h-screen flex flex-col bg-white antialiased font-sans selection:bg-[#E8DCC9] selection:text-dark">
               
               {/* SEO Accessibility H1 */}

@@ -117,8 +117,8 @@ const FlashDeal = () => {
                   </div>
                   <h3 className="text-[13px] font-bold text-white text-center line-clamp-1 mb-1">{product.name}</h3>
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] text-neutral-500 line-through">{product.price}</span>
-                    <span className="text-[14px] font-black text-[#C49A6C]">{product.salePrice}</span>
+                    <span className="text-[11px] text-neutral-500 line-through">{product.originalPrice || product.price}</span>
+                    <span className="text-[14px] font-black text-[#C49A6C]">{product.salePrice || product.price}</span>
                   </div>
                 </div>
               ))}

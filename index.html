@@ -7,6 +7,26 @@
     <meta name="description" content="뷰티럭스 코리아 - 100% 정품 샤넬 뷰티, 메이크업, 스킨케어, 시그니처 향수 컬렉션을 만나보세요. 파리지앵의 진정한 우아함이 시작되는 곳." />
     <meta name="keywords" content="샤넬뷰티, 샤넬화장품, 샤넬립스틱, 샤넬향수, 뷰티럭스코리아, 명품화장품" />
     <title>Beauty Luxe Korea | 100% 정품 샤넬 뷰티 & 향수 셀렉션</title>
+    <script>
+      (function() {
+        var isGitHubPages = window.location.hostname.includes('github.io');
+        if (isGitHubPages) {
+          var repoName = '/my-pham-shop2';
+          var originalSet = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src').set;
+          Object.defineProperty(HTMLImageElement.prototype, 'src', {
+            set: function(val) {
+              if (typeof val === 'string' && val.includes('/images/') && !val.includes(repoName)) {
+                var url = new URL(val, window.location.href);
+                if (url.pathname.startsWith('/images/')) {
+                  val = repoName + url.pathname + url.search + url.hash;
+                }
+              }
+              originalSet.call(this, val);
+            }
+          });
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
